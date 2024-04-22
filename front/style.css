@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-topo: #0081FF;
+    --cor-meio: #00C0FF;
+    --cor-fundo: #FFFFFF;
+}
+
+body {
+    background: linear-gradient(to top, var(--cor-topo), var(--cor-meio), var(--cor-fundo));
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.welcome-container {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30vh;
+}
+
+.welcome-text {
+    font-size: 36px; /* Tamanho da fonte */
+    font-weight: bold;
+    font-family: "Arial Black", sans-serif; /* Outra fonte */
+    margin-bottom: 10px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-entrar,
+.btn-criar-conta {
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    width: 150px; /* Defina uma largura fixa aqui */
+    display: inline-block; /* Adicione isso para que a largura fixa seja respeitada */
+}
+
+.btn-entrar {
+    background-color: #000;
+    color: #FFF;
+}
+
+.btn-criar-conta {
+    background-color: #FFF;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.signup-container {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+input {
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 3vh;
+    width: 65vw;
+    padding: 10px;
+}
