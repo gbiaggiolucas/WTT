@@ -4,11 +4,12 @@ const dotenv = require('dotenv').config();
 async function storeTask(request, response) {
 
     const params = Array(
-        request.body.title,
-        request.body.description,
+        request.body.email,
+        request.body.nome,
+        request.body.senha
     );
 
-    const query = "INSERT INTO tasks(title, description) VALUES(?, ?)";
+    const query = "INSERT INTO usuario(email, nome, senha) VALUES(?, ?, ?)";
 
     connection.query(query, params, (err, results) => {
         if(results) {
