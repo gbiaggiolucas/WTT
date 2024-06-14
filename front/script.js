@@ -26,25 +26,20 @@ document.getElementById("confirm").addEventListener("click", async function() {
     } else if (senha !== confirmarsenha) {
         errorElement.innerHTML += "<br>As senhas não coincidem.<br>";
     } else {
-        let data = { email, nome, senha };
+        let data = {email, nome, telefone}
 
-        try {
-            const response = await fetch("http://localhost:3001/api/store/task", {
-                method: "POST",
-                headers: { "Content-type": "application/json;charset=UTF-8" },
-                body: JSON.stringify(data)
-            });
+        const response = await fetch("http://localhost:3001/api/store/task", {
+            method: "POST",
+            headers: { "Content-type": "application/json;charset=UTF-8" },
+            body: JSON.stringify(data)
+        });
 
-            let content = await response.json();
+        let content = await response.json();
 
-            if (content.success) {
-                window.location.href = "signin.html";
-            } else {
-                alert(content.message); // Exibir mensagem de erro do servidor
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Houve um problema ao processar sua solicitação. Tente novamente mais tarde.");
+        if (content.success) {
+            window.location.href = "sigin.html"
+        } else {
+            errorElement.innerHTML += "<br>Tente novamente mais tarde<br>"
         }
     }
 });
