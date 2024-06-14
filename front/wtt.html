@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="scriptwtt.js" defer></script>
+    <title>Monitoramento de Redes Sociais</title>
 </head>
 <body>
-    <div class="welcome-container">
-        <h2>Bem-vindo ao</h2>
-        <img src="WTT.png" height="100vh">
-    </div>
-    <div class="btn-container">
-        <button class="btn-entrar" id="signin">Entrar</button>
-        <button class="btn-criar-conta" id="signup">Criar Conta</button>
+    <div class="container">
+        <h1>Monitoramento de Redes Sociais</h1>
+        <button id="startTimer">Iniciar Monitoramento</button>
+        <button id="stopTimer">Parar Monitoramento</button>
+        <div id="timers">
+            <h2>Tempo Gasto:</h2>
+            <p>Instagram: <span id="instagramTimer">0</span> segundos</p>
+            <p>WhatsApp: <span id="whatsappTimer">0</span> segundos</p>
+            <p>YouTube: <span id="youtubeTimer">0</span> segundos</p>
+            <p>TikTok: <span id="tiktokTimer">0</span> segundos</p>
+            <p>Twitter: <span id="twitterTimer">0</span> segundos</p>
+        </div>
     </div>
 </body>
 </html>

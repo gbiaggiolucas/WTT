@@ -1,12 +1,16 @@
 const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const router = require('./routes/taskRouter');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv').config();
+const userRoutes = require('./routes/userRoutes');
+
 const app = express();
 
-app.set('port', process.env.PORT || 3005);
-app.use(cors());
-app.use(express.json());
-app.use('/api', router);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-module.exports = app
+app.use('/api', userRoutes);
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

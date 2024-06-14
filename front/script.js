@@ -18,7 +18,7 @@ document.getElementById("confirm").addEventListener("click", async function() {
     } else if (senha !== confirmarsenha) {
         errorElement.innerHTML += "<br>As senhas não coincidem.<br>";
     } else if (errorElement.innerHTML === "") {
-        let data = {email, nome, senha};
+        let data = { email, nome, senha };
 
         const response = await fetch("http://localhost:3001/api/store/task", {
             method: "POST",
@@ -31,13 +31,12 @@ document.getElementById("confirm").addEventListener("click", async function() {
         if (content.success) {
             window.location.href = "signin.html";
         } else {
-            alert("algo deu errado!");
-        } 
+            alert(content.message); // Exibir mensagem de erro do servidor
+        }
     }
 });
 
-
-document.getElementById("login").addEventListener("click", function() {
+document.getElementById("login").addEventListener("click", async function() {
     const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value.trim();
     let errorMessage = "";
@@ -54,15 +53,21 @@ document.getElementById("login").addEventListener("click", function() {
         errorElement.innerHTML = errorMessage;
     } else {
         errorElement.innerHTML = "";
-        
-        console.log("Todos os campos estão preenchidos corretamente.");
+
+        let data = { email, senha };
+
+        const response = await fetch("http://localhost:3001/api/login", {
+            method: "POST",
+            headers: { "Content-type": "application/json;charset=UTF-8" },
+            body: JSON.stringify(data)
+        });
+
+        let content = await response.json();
+
+        if (content.success) {
+            window.location.href = "wtt.html";
+        } else {
+            alert(content.message); // Exibir mensagem de erro do servidor
+        }
     }
 });
-
-document.getElementById("signup").addEventListener("click", function () {
-    window.location.href = "signup.html";
-});
-
-document.getElementById("signin").addEventListener("click", function () {
-    window.location.href = "signin.html";
-})
