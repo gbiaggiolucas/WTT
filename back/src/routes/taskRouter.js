@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const userController = require('../controllers/userController');
+const { Router } = require('express');
+const router = Router();
 
-router.post('/store/task', userController.storeTask);
-router.post('/login', userController.loginTask);
+const { storeTask } = require('../controller/taskController');
+
+router.post('/store/task', storeTask);
 
 module.exports = router;

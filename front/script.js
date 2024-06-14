@@ -1,3 +1,11 @@
+document.getElementById("signup").addEventListener("click", function () {
+    window.location.href = "signup.html";
+});
+
+document.getElementById("signin").addEventListener("click", function () {
+    window.location.href = "signin.html";
+});
+
 document.getElementById("confirm").addEventListener("click", async function() {
     let email = document.getElementById("email").value.trim();
     let nome = document.getElementById("nome").value.trim();
@@ -17,21 +25,26 @@ document.getElementById("confirm").addEventListener("click", async function() {
         errorElement.innerHTML += "<br>O campo confirmar senha é obrigatório.<br>";
     } else if (senha !== confirmarsenha) {
         errorElement.innerHTML += "<br>As senhas não coincidem.<br>";
-    } else if (errorElement.innerHTML === "") {
+    } else {
         let data = { email, nome, senha };
 
-        const response = await fetch("http://localhost:3001/api/store/task", {
-            method: "POST",
-            headers: { "Content-type": "application/json;charset=UTF-8" },
-            body: JSON.stringify(data)
-        });
+        try {
+            const response = await fetch("http://localhost:3001/api/store/task", {
+                method: "POST",
+                headers: { "Content-type": "application/json;charset=UTF-8" },
+                body: JSON.stringify(data)
+            });
 
-        let content = await response.json();
+            let content = await response.json();
 
-        if (content.success) {
-            window.location.href = "signin.html";
-        } else {
-            alert(content.message); // Exibir mensagem de erro do servidor
+            if (content.success) {
+                window.location.href = "signin.html";
+            } else {
+                alert(content.message); // Exibir mensagem de erro do servidor
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Houve um problema ao processar sua solicitação. Tente novamente mais tarde.");
         }
     }
 });
@@ -56,18 +69,23 @@ document.getElementById("login").addEventListener("click", async function() {
 
         let data = { email, senha };
 
-        const response = await fetch("http://localhost:3001/api/login", {
-            method: "POST",
-            headers: { "Content-type": "application/json;charset=UTF-8" },
-            body: JSON.stringify(data)
-        });
+        try {
+            const response = await fetch("http://localhost:3001/api/login", {
+                method: "POST",
+                headers: { "Content-type": "application/json;charset=UTF-8" },
+                body: JSON.stringify(data)
+            });
 
-        let content = await response.json();
+            let content = await response.json();
 
-        if (content.success) {
-            window.location.href = "wtt.html";
-        } else {
-            alert(content.message); // Exibir mensagem de erro do servidor
+            if (content.success) {
+                window.location.href = "wtt.html";
+            } else {
+                alert(content.message); // Exibir mensagem de erro do servidor
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Houve um problema ao processar sua solicitação. Tente novamente mais tarde.");
         }
     }
 });
