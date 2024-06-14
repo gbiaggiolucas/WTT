@@ -9,23 +9,9 @@ create table usuario(
     senha varchar(255) not null
 );
 
-insert into usuario (nome, email, senha)values
-('Gustavo','gustavo@email.com','12345678'),
-('Lorenzo', 'lorenzo@gmail.com', '12345678'),
-('Pedro', 'pedro@gmail.com', '12345678');
-
-select * from usuario;
-
 CREATE TABLE dados_redes_sociais (
     usuario_id INT,
     tempo_uso_minutos int,
     rede_social enum('twitter', 'whattsapp', 'tiktok', 'youtube', 'instagram') not null,
     FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
-
-insert into dados_redes_sociais (tempo_uso_minutos, rede_social)values
-(120, 'instagram'),
-(30, 'whattsapp'),
-(60, 'youtube');
-
-select * from dados_redes_sociais
