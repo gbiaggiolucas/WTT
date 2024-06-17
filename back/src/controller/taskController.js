@@ -9,7 +9,7 @@ async function storeTask(request, response) {
         request.body.senha
     );
 
-    const query = "INSERT INTO tasks(email, nome, senha) VALUES(?, ?, ?)";
+    const query = "INSERT INTO usuario(email, nome, senha) VALUES(?, ?, ?)";
 
     connection.query(query, params, (err, results) => {
         if(results) {
@@ -31,8 +31,6 @@ async function storeTask(request, response) {
         }
     })
 }
-
-
 
 module.exports = {
     storeTask
