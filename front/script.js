@@ -37,50 +37,9 @@ document.getElementById("confirm").addEventListener("click", async function() {
         let content = await response.json();
 
         if (content.success) {
-            window.location.href = "sigin.html"
+            window.location.href = "wtt.html"
         } else {
             errorElement.innerHTML += "<br>Tente novamente mais tarde<br>"
-        }
-    }
-});
-
-document.getElementById("login").addEventListener("click", async function() {
-    const email = document.getElementById("email").value.trim();
-    const senha = document.getElementById("senha").value.trim();
-    let errorMessage = "";
-
-    if (email === "") {
-        errorMessage += "<br>O campo email é obrigatório.<br>";
-    }
-    if (senha === "") {
-        errorMessage += "<br>O campo senha é obrigatório.<br>";
-    }
-
-    const errorElement = document.getElementById("error-message");
-    if (errorMessage) {
-        errorElement.innerHTML = errorMessage;
-    } else {
-        errorElement.innerHTML = "";
-
-        let data = { email, senha };
-
-        try {
-            const response = await fetch("http://localhost:3001/api/login", {
-                method: "POST",
-                headers: { "Content-type": "application/json;charset=UTF-8" },
-                body: JSON.stringify(data)
-            });
-
-            let content = await response.json();
-
-            if (content.success) {
-                window.location.href = "wtt.html";
-            } else {
-                alert(content.message); // Exibir mensagem de erro do servidor
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Houve um problema ao processar sua solicitação. Tente novamente mais tarde.");
         }
     }
 });
