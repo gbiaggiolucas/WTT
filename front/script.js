@@ -1,12 +1,8 @@
-document.getElementById("signup").addEventListener("click", function () {
-    window.location.href = "signup.html";
-});
+let signup = document.getElementById("signup");
+let signin = document.getElementById("signin");
+let confirm = document.getElementById("confirm");
 
-document.getElementById("signin").addEventListener("click", function () {
-    window.location.href = "signin.html";
-});
-
-document.getElementById("confirm").addEventListener("click", async function() {
+confirm.addEventListener("click", async function() {
     let email = document.getElementById("email").value.trim();
     let nome = document.getElementById("nome").value.trim();
     let senha = document.getElementById("senha").value.trim();
@@ -43,3 +39,11 @@ document.getElementById("confirm").addEventListener("click", async function() {
         }
     }
 });
+
+signup.addEventListener("click", function () {
+    window.location.href = "signup.html"
+})
+
+signin.addEventListener("click", function () {
+    window.location.href = "signin.html"
+})
