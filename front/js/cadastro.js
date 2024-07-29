@@ -1,8 +1,4 @@
-let signup = document.getElementById("signup");
-let signin = document.getElementById("signin");
-let confirm = document.getElementById("confirm");
-
-confirm.addEventListener("click", async function() {
+document.getElementById("confirm").addEventListener("click", async function() {
     let email = document.getElementById("email").value.trim();
     let nome = document.getElementById("nome").value.trim();
     let senha = document.getElementById("senha").value.trim();
@@ -22,7 +18,7 @@ confirm.addEventListener("click", async function() {
     } else if (senha !== confirmarsenha) {
         errorElement.innerHTML += "<br>As senhas não coincidem.<br>";
     } else {
-        let data = {email, nome, telefone}
+        let data = {email, nome, senha}
 
         const response = await fetch("http://localhost:3001/api/store/task", {
             method: "POST",
@@ -33,17 +29,9 @@ confirm.addEventListener("click", async function() {
         let content = await response.json();
 
         if (content.success) {
-            window.location.href = "wtt.html"
+            window.location.href = "../html/wtt.html"
         } else {
             errorElement.innerHTML += "<br>Tente novamente mais tarde<br>"
         }
     }
 });
-
-signup.addEventListener("click", function () {
-    window.location.href = "signup.html"
-})
-
-signin.addEventListener("click", function () {
-    window.location.href = "signin.html"
-})
