@@ -1,4 +1,5 @@
 const connection = require('../config/db');
+const dotenv = require('dotenv').config();
 
 async function storeUser(request, response) {
 
@@ -34,14 +35,15 @@ async function storeUser(request, response) {
 async function login(request, response) {
     const email = Array(request.body.email);
 
-    const query = "SELECT email, password FROM users WHERE email = ?";
+    const query = "SELECT email, senha FROM usuario WHERE email = ?";
 
     connection.query(query, email, (err, results) => {
+        console.log("erro", err)
         if(results.length > 0) {
-            const password = request.body.password;
-            const passwordQuery = results[0].password;
+            const senha = request.body.senha;
+            const senhaQuery = results[0].senha;
 
-            if(password === passwordQuery) {
+            if(senha === senhaQuery) {
                 response
                 .status(200)
                 .json({
@@ -55,7 +57,6 @@ async function login(request, response) {
                 .json({
                     success: false,
                     message: "Senha incorreta",
-                    data: err
                 })
             }
         } else {
