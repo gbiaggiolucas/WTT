@@ -48,3 +48,37 @@ h2{
 .offcanvas-end{
     background: linear-gradient(to bottom, #0091ff , #00A3FF , #00C0FF);
 }
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .wtt {
+    margin-right: -10%; /* Aproxima o texto da imagem */
+}
+
+.navbar {
+    padding: 0.25rem 0.5rem !important; /* Reduzindo o padding geral */
+}
+
+.navbar .container-fluid {
+    gap: 0.25rem !important; /* Reduzindo o espaço entre elementos */
+}
+
+.navbar .nav-link {
+    margin: 0 0.1rem !important; /* Reduzindo o espaço entre os links */
+}
+
+.navbar .navbar-toggler {
+    margin-right: 0.25rem !important; /* Reduzindo o espaço ao redor do botão */
+}
+
+.offcanvas-header {
+    padding: 0.5rem !important; /* Reduzindo o padding do cabeçalho do offcanvas */
+}
+
+.offcanvas-body {
+    padding: 0.5rem !important; /* Reduzindo o padding do corpo do offcanvas */
+}
