@@ -7,3 +7,7 @@ document.getElementById("configbtn").addEventListener("click", function() {
 document.getElementById("homebtn").addEventListener("click", function() {
     window.location.href = "../html/wtt.html"
 })
+
+document.getElementById("exit").addEventListener("click", function() {
+    window.location.href = "../html/index.html"
+})

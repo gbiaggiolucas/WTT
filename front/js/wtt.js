@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Instagram",
         "WhatsApp",
         "YouTube",
-        "Twitter",
+        "X",
         "TikTok"
     ];
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Instagram": 120,   // 2 horas
         "WhatsApp": 60,     // 1 hora
         "YouTube": 30,      // 30 minutos
-        "Twitter": 0,       // 0 minutos
+        "X": 0,       // 0 minutos
         "TikTok": 45        // 45 minutos
     };
 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     'rgba(255, 99, 132, 0.2)',   // Instagram
                     'rgba(54, 162, 235, 0.2)',   // WhatsApp
                     'rgba(255, 206, 86, 0.2)',   // YouTube
-                    'rgba(75, 192, 192, 0.2)',   // Twitter
+                    'rgba(75, 192, 192, 0.2)',   // X
                     'rgba(153, 102, 255, 0.2)'   // TikTok
                 ],
                 borderColor: [
