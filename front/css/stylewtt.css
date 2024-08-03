@@ -26,9 +26,8 @@ nav {
 }
 
 main {
-    height: 80vh;
     background: #00C0FF;
-    font-family: Arial, sans-serif; /* Fonte padrão */
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -56,31 +55,31 @@ h2{
 }
 
 .navbar .wtt {
-    margin-right: -10%; /* Aproxima o texto da imagem */
+    margin-right: -10%;
 }
 
 .navbar {
-    padding: 0.25rem 0.5rem !important; /* Reduzindo o padding geral */
+    padding: 0.25rem 0.5rem !important;
 }
 
 .navbar .container-fluid {
-    gap: 0.25rem !important; /* Reduzindo o espaço entre elementos */
+    gap: 0.25rem !important;
 }
 
 .navbar .nav-link {
-    margin: 0 0.1rem !important; /* Reduzindo o espaço entre os links */
+    margin: 0 0.1rem !important;
 }
 
 .navbar .navbar-toggler {
-    margin-right: 0.25rem !important; /* Reduzindo o espaço ao redor do botão */
+    margin-right: 0.25rem !important;
 }
 
 .offcanvas-header {
-    padding: 0.5rem !important; /* Reduzindo o padding do cabeçalho do offcanvas */
+    padding: 0.5rem !important;
 }
 
 .offcanvas-body {
-    padding: 0.5rem !important; /* Reduzindo o padding do corpo do offcanvas */
+    padding: 0.5rem !important;
 }
 
 #exit {
@@ -90,6 +89,31 @@ h2{
     width: 80px;
 }
 
-.container-config {
-    border: 1px rgba(0, 0, 0, 0.1).0.0.1 solid;
+.config-container {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-top: 30vh;
+    margin-bottom: 5vh;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.config-button {
+    color: white;
+    background-color: #0091ff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10vw;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    width: 100px;
 }
